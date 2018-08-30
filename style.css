@@ -1,1 +1,37 @@
 /*beginning of css*/
+#fields{
+    display: block;
+    text-align: center;
+}
+.registration_form{
+       text-align: center;
+    float: right;
+    background-color:aqua;
+    width:50%;
+    position: relative;
+}
+#landing_image{
+        height: 100%;
+    }
+#navigation_bar{
+    width: 100%;
+    background-color: grey;
+    height:45px
+}
+
+.me{
+    text-align: center
+}
+@media(max-width:640px){
+    .registration_form{
+        background-color:skyblue;
+        width: 100%;
+        position: relative;
+    }
+    #landing_image{
+        width:98%;
+        height: 100%;
+        position: absolute;
+       
+    }
+}
