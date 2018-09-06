@@ -1,39 +1,39 @@
-while True:
-    
+class Reception:
+    def __init__(self):  
+        self.vip=[]
+        self.ordinary=[]
+    def store_vip(self):
+        temp_vip=open('guest_lists/vip_list.txt','r')       
+        for line in temp_vip:
+            self.vip.append(line.strip('\n'))
+        return self.vip
 
-    class Ordinary:
-        def ordinary_guest():
-            ordinary_list_text_file=open("guest lists/ordinary_list.txt")
-            ordinary_file_content=ordinary_list_text_file.read()
-            ordinary_guest_names_list=[]
-            
-            ordinary_guest_names_list=ordinary_file_content.split("\n")
-            for person in ordinary_guest_names_list:
-                if person_name.lower() in person.lower():
-                    return (person+", Ordinary")
-                else:
-                    pass
-    class VIP:
-        def vip_guest():
-            vip_list_text_file=open("guest lists/vip_list.txt")
-            vip_file_content=vip_list_text_file.read()
-            vip_guest_names_list=[]
-            vip_guest_names_list=vip_file_content.split("\n")
-            for guest in vip_guest_names_list:
-                        if person_name.lower() in guest.lower():
-                            return (guest+", VIP")
-                        else:
-                            pass
-                        
-    def registration_checker():
-        
-        if Ordinary.ordinary_guest():
-            return(Ordinary.ordinary_guest())
-        elif VIP.vip_guest():
-            return(VIP.vip_guest())
-        else:
-            return "Not registered"
-        
-    person_name=input("Enter a single name: ")
-    print(registration_checker())
+    def store_ordinary(self):
+        temp_ordinary=open('guest_lists/ordinary_list.txt','r')
+        for line in temp_ordinary:
+            self.ordinary.append(line.strip('\n'))
+        return self.ordinary
     
+    def validation(self,name):
+        if " " in name:
+            raise TypeError
+            
+      
+    def registration_checker(self,enter_name):
+        vip_names=[]
+        ordinary_names=[]
+        ordinary_names=self.store_ordinary()
+        vip_names=self.store_vip()
+        for nm in vip_names:
+            if enter_name in nm.casefold():
+                return nm+" VIP"
+            else:
+                pass
+        for n in ordinary_names:
+            if enter_name in n.casefold():
+                return n+" ordinary"
+        else:
+            return enter_name+" Not Registered"
+
+people=Reception()
+print (people.registration_checker(input('Enter name: ')))      
