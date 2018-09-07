@@ -6,11 +6,11 @@ app=Flask('__name__')
 all_users_list= []
 
 @app.route('/', methods=['GET'])
-@app.route('/api/get_users',methods=['GET'])
+@app.route('/api/user',methods=['GET'])
 def all_users_getter():
     return jsonify({'users': all_users_list}),200
 
-@app.route('/api/add_user',methods=['POST'])
+@app.route('/api/user',methods=['POST'])
 def  add_a_user():
     data=request.get_json()
     name=data['user_name']
@@ -24,7 +24,7 @@ def  add_a_user():
     
  
 
-@app.route('/api/delete_user/<user_id>',methods=['DELETE'])
+@app.route('/api/user/<user_id>',methods=['DELETE'])
 def delete_user(user_id):
     for user in all_users_list:
         if str(user['user_id'])==str(user_id):
