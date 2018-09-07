@@ -9,8 +9,8 @@ class Reception:
         return self.vip
 
     def store_ordinary(self):
-        ordinary_names_in_file=open('guest_lists/ordinary_list.txt')
-        for full_name in ordinary_names_in_file:
+        ordinary_names_file=open('guest_lists/ordinary_list.txt')
+        for full_name in ordinary_names_file:
             self.ordinary.append(full_name.strip('\n'))
         return self.ordinary
     
@@ -23,16 +23,20 @@ class Reception:
         ordinary_names=[]
         ordinary_names=self.store_ordinary()
         vip_names=self.vip_guest()
+
         for full_name_1 in vip_names:
-            if person_name in full_name_1.casefold():
+            if person_name.lower() in full_name_1.lower():
                 return full_name_1+" VIP"
             else:
                 pass
-        for n in ordinary_names:
-            if person_name in full_name_2.casefold():
+        for full_name_2 in ordinary_names:
+            if person_name.lower() in full_name_2.lower():
                 return full_name_2+" ordinary"
-        else:
-            return person_name+" Not Registered"
+            else:
+                pass
+        
+        return "Not Registered"
+        
     def check_function(self):
         if self.registration_checker("string"):
             return True
@@ -41,6 +45,6 @@ class Reception:
 
             #the statements below run the app
 
-# guest=Reception()            
-# while True:
-#    print(guest.registration_checker(input("Enter a single name: ")))
+#guest=Reception()            
+#while True:
+   #print(guest.registration_checker(input("Enter a single name: ")))
