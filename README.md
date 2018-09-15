@@ -1,6 +1,6 @@
+[![Build Status](https://travis-ci.org/kaggwachristopher/Events-world.svg?branch=database)](https://travis-ci.org/kaggwachristopher/Events-world)
 # Events-World
 This app generally works as an events management tool where an events and is of great importance to events managing companies for a convinient sevice to thier users
-
 ## Getting Started
 Download this branch to get started with events world
 
