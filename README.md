@@ -1,3 +1,5 @@
+[![Test Coverage](https://api.codeclimate.com/v1//bf605057321ef83d9876/test_coverage)](https://codeclimate.com/github//-/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1//bf605057321ef83d9876/maintainability)](https://codeclimate.com/github//-/maintainability)
 [![Coverage Status](https://.io/repos/github//-/badge.svg?branch=master)](https://.io/github//-?branch=master)
 [![Build Status](https://travis-ci.org/kaggwachristopher/Events-world.svg?branch=database)](https://travis-ci.org/kaggwachristopher/Events-world)
 # Events-World
