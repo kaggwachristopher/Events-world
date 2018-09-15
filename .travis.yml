@@ -1,1 +1,9 @@
+language: python
 
+python:
+  - "3.6"
+# command to install dependencies
+install:
+  - pip install -r python/01/requirements.txt
+script:
+  - cd python/01 && pytest
